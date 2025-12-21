@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eldiaz-c <eldiaz-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eldiaz-c <eldiaz-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 17:06:14 by eldiaz-c          #+#    #+#             */
-/*   Updated: 2025/12/09 17:14:40 by eldiaz-c         ###   ########.fr       */
+/*   Updated: 2025/12/19 22:42:52 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,35 +40,3 @@ int main(int argc, char **argv)
     std::cout << std::endl;
     return (0);
 }
-/*
-int main (int argc, char *argv[])
-{
-	int	x;
-	int z;
-
-	x = 0;
-	z = 1;
-	std::string	result;
-	if (argc == 1)
-	{
-		std::cout << "\033[1;31m * LOUD AND UNBEARABLE FEEDBACK NOISE * \033[0m" << std::endl;
-		return (0);
-	}
-	else
-	{
-		while(argv[z])
-		{
-			result = argv[z];
-			while(result[x])
-			{
-				std::cout << "\033[1;31m" << char(toupper(result[x])) << "\033[0m";
-				x++;
-			}
-			x = 0;
-			z++;
-		}
-		std::cout << std::endl;
-	}
-	return (0);
-}
-*/

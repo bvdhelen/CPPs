@@ -12,7 +12,7 @@
 
 #include "PhoneBook.hpp"
 
-// constructor
+// constructor: inicializa la clase
 PhoneBook::PhoneBook()
 {
 	count = 0;
@@ -92,14 +92,14 @@ void	PhoneBook::searchContacts() const
 	// Validar si es un dígito valido (0-7)
 	if (input.length() != 1 || input[0] < '0' || input[0] > '7')
 	{
-		std::cout << "Invalid index" << std::endl;
+		std::cout << "Invalid index number" << std::endl;
 		return ;
 	}
 	idx = input[0] - '0';
 	// Comprobar que el índice existe (PhoneBook)
 	if (idx < 0 || idx >= count)
 	{
-		std::cout << "Invalid index" << std::endl;
+		std::cout << "Invalid index out of range" << std::endl;
 		return ;
 	}
 	// 4) Mostrar contacto pedido completo

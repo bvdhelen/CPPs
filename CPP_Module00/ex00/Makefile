@@ -6,29 +6,52 @@
 #    By: eldiaz-c <eldiaz-c@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/19 22:42:45 by eldiaz-c          #+#    #+#              #
-#    Updated: 2025/12/20 22:38:08 by eldiaz-c         ###   ########.fr        #
+#    Updated: 2025/12/23 12:03:06 by eldiaz-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+# Nombre del programa
 NAME = megaphone
 
+# Compilador y banderas de compilación
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
+# Definir códigos de color
+BLACK = \033[0;30m
+RED = \033[0;31m
+GREEN = \033[0;32m
+YELLOW = \033[0;33m
+BLUE = \033[0;34m
+MAGENTA = \033[0;35m
+CYAN =  \033[0;36m
+WHITE = \033[0;37m
+GREY = \033[0;90m
+RESET = \033[0m
+
+# Archivos fuente y archivos objeto
 SRCS = megaphone.cpp
 OBJS = $(SRCS:%.cpp=%.o)
-DEPS = $(OBJS:%.o=%.d)
 
 all: $(NAME)
 
 $(NAME): $(SRCS)
+	@echo "$(GREY)Compiling...$(RESET)"
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(SRCS)
+	@echo
+	@echo "$(GREEN)<<< CPP00-ex00 compiled >>>$(RESET)"
+	@echo
 
 clean:
-	rm -rf $(OBJS) $(DEPS)
+	@rm -rf $(OBJS)
+	@echo
+	@echo "$(CYAN)<<< clean complete >>>$(RESET)"
+	@echo
 
 fclean: clean
-	rm -rf $(NAME)
+	@rm -rf $(NAME)
+	@echo "$(BLUE)<<< full clean complete >>>$(RESET)"
+	@echo
 	
 re: fclean all
 

@@ -14,13 +14,15 @@
 #define PHONEBOOK_HPP
 
 #include "Contact.hpp"
-#include <iostream>
+#include <iostream> //Para imprimir
 #include <iomanip>
+
+#define SIZE_BOOK 8
 
 class PhoneBook
 {
 private:
-	Contact contacts[8];
+	Contact contacts[SIZE_BOOK];
 	int		count;
 	int		index;
 

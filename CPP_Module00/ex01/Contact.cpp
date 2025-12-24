@@ -21,41 +21,41 @@ Contact::Contact()
 // setters
 void	Contact::setFirstName(std::string value)
 {
-	firstName = value;
+	_firstName = value;
 }
 
 void	Contact::setLastName(std::string value)
 {
-	lastName = value;
+	_lastName = value;
 }
 
 void	Contact::setNickname(std::string value)
 {
-	nickname = value;
+	_nickname = value;
 }
 
 void	Contact::setPhoneNumber(std::string value)
 {
-	phoneNumber = value;
+	_phoneNumber = value;
 }
 
 void	Contact::setDarkestSecret(std::string value)
 {
-	darkestSecret = value;
+	_darkestSecret = value;
 }
 
 // getters
 std::string Contact::getFirstName() const
 {
-	return firstName;
+	return _firstName;
 }
 
 std::string Contact::getLastName() const
 {
-	return lastName;
+	return _lastName;
 }
 
 std::string Contact::getNickname() const
 {
-	return nickname;
+	return _nickname;
 }

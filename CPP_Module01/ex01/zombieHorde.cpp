@@ -15,17 +15,17 @@
 // Función para crear N zombies
 Zombie	*zombieHorde(int N, std::string name)
 {
-	Zombie	*horde;
+	Zombie	*zombies;
 	int		i;
 
 	if (N <= 0)
 		return (NULL);
-	horde = new Zombie[N];
+	zombies = new Zombie[N];
 	i = 0;
 	while (i < N)
 	{
-		horde[i].setName(name);
+		zombies[i].setName(name);
 		i++;
 	}
-	return (horde);
+	return (zombies);
 }

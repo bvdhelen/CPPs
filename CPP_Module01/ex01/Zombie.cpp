@@ -15,13 +15,17 @@
 // Constructor por defecto
 Zombie::Zombie()
 {
-
+	static int	i= 1;
+	std::cout << "Zombie_sin_nombre" << i << ": created" << std::endl;
+	i++;
 }
 
 // Destructor
 Zombie::~Zombie()
 {
-	std::cout << _name << " destroyed" << std::endl;
+	static int	i = 1;
+	std::cout << _name << i << ": destroyed" << std::endl;
+	i++;
 }
 
 // Función para inicializar zombie

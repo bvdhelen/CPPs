@@ -15,6 +15,9 @@
 #include <iomanip> //Para utilizar setw, setfill
 #include <ctime> //Para utilizar fecha y hora
 
+// Para corregir el ejercicio:
+// ./globalbanksters | diff - 19920104_091532.log
+
 /* RESUMEN DEL LOG
 info global		->	displayAccountInfos
 crear cuenta	->	constructor
@@ -24,9 +27,6 @@ retirar OK		->	makeWithdrawal
 retirar KO		->	makeWithdrawal
 destruir		->	destructor
 */
-
-// Para corregir el ejercicio:
-// ./globalbanksters | diff - 19920104_091532.log
 
 // FUNCIÓN PARA IMPRIMIR FECHA Y HORA ACTUAL
 // Formato: [YYYYMMDD_HHMMSS]

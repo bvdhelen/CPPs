@@ -13,7 +13,7 @@
 #ifndef CONTACT_HPP
 #define CONTACT_HPP
 
-#include <string>
+#include <string> //Para manejar strings
 
 class Contact
 {
@@ -27,11 +27,11 @@ private:
 public:
 	Contact();
 
-	void setFirstName(std::string value);
-	void setLastName(std::string value);
-	void setNickname(std::string value);
-	void setPhoneNumber(std::string value);
-	void setDarkestSecret(std::string value);
+	void setFirstName(std::string firstName);
+	void setLastName(std::string lastName);
+	void setNickname(std::string nickname);
+	void setPhoneNumber(std::string phoneNumber);
+	void setDarkestSecret(std::string darkestSecret);
 
 	std::string getFirstName() const;
 	std::string getLastName() const;

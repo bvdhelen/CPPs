@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: eldiaz-c <eldiaz-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/20 22:41:28 by eldiaz-c          #+#    #+#             */
-/*   Updated: 2025/12/20 22:41:28 by eldiaz-c         ###   ########.fr       */
+/*   Created: 2025/12/26 11:35:26 by eldiaz-c          #+#    #+#             */
+/*   Updated: 2025/12/26 11:35:26 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,29 +19,29 @@ Contact::Contact()
 }
 
 // setters
-void	Contact::setFirstName(std::string value)
+void	Contact::setFirstName(std::string firstName)
 {
-	_firstName = value;
+	_firstName = firstName;
 }
 
-void	Contact::setLastName(std::string value)
+void	Contact::setLastName(std::string lastName)
 {
-	_lastName = value;
+	_lastName = lastName;
 }
 
-void	Contact::setNickname(std::string value)
+void	Contact::setNickname(std::string nickname)
 {
-	_nickname = value;
+	_nickname = nickname;
 }
 
-void	Contact::setPhoneNumber(std::string value)
+void	Contact::setPhoneNumber(std::string phoneNumber)
 {
-	_phoneNumber = value;
+	_phoneNumber = phoneNumber;
 }
 
-void	Contact::setDarkestSecret(std::string value)
+void	Contact::setDarkestSecret(std::string darkestSecret)
 {
-	_darkestSecret = value;
+	_darkestSecret = darkestSecret;
 }
 
 // getters

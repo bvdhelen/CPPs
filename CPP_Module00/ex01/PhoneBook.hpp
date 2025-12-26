@@ -15,7 +15,7 @@
 
 #include "Contact.hpp"
 #include <iostream> //Para imprimir
-#include <iomanip>
+#include <iomanip> //Para formatear la salida por consola (setw(10))
 
 #define SIZE_BOOK 8
 

@@ -12,7 +12,7 @@
 
 #include "Zombie.hpp"
 
-// Función ...
+// Función para crear un Zombie asignando memoria (hay que liberar)
 // MEMORIA HEAP
 Zombie	*newZombie(std::string name)
 {

@@ -21,9 +21,10 @@ class Zombie
 	private:
 		std::string _name;
 	public:
-		Zombie(std::string name);
-		~Zombie();
-		void	announce();
+		Zombie(std::string name); // Constructor
+		~Zombie(); // Destructor
+
+		void	announce(void); // Función miembro de la clase
 };
 
 Zombie	*newZombie(std::string name);

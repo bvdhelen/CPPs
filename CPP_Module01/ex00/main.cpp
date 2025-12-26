@@ -16,11 +16,17 @@ int	main(void)
 {
 	Zombie	*heapZombie;
 
-	// Heap Zombie
+	// Zombie en Memoria Heap
 	heapZombie = newZombie("HeapZombie");
 	heapZombie->announce();
 	delete (heapZombie);
-	// Stack Zombie
-	randomChump("StackZombie");
+	
+	// Zombie en Memoria Stack
+	Zombie	stackZombie("StackZombie1");
+	stackZombie.announce();
+
+	// Zombie en Memoria Stack (llamada a función)
+	randomChump("StackZombie2");
+	
 	return (0);
 }

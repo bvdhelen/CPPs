@@ -24,8 +24,12 @@ Zombie::~Zombie()
 	std::cout << _name << " destroyed" << std::endl;
 }
 
-// Función Announce
+// Función miembro (announce)
 void	Zombie::announce(void)
 {
 	std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
+
+// NOTA:
+// Uso this-> cuando ASIGNO variables
+// y lo omito cuando LEO variables

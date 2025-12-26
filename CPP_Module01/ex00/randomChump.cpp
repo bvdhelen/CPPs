@@ -12,7 +12,7 @@
 
 #include "Zombie.hpp"
 
-// Función ...
+// Función para crear un Zombie y llamar a la función miembro
 // MEMORIA STACK
 void	randomChump(std::string name)
 {

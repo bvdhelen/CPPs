@@ -12,7 +12,7 @@
 
 #include "Zombie.hpp"
 
-// Constructor por defecto
+// Constructor (por defecto vacío)
 Zombie::Zombie()
 {
 	static int	i= 1;

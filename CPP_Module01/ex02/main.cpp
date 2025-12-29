@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-#include <iostream>
+#include <string> // std::string
+#include <iostream> // std::cout
 
 int	main(void)
 {
@@ -38,4 +38,4 @@ int	main(void)
 // Un puntero es una variable que almacena una dirección de memoria
 	// Puede ser nulo o cambiar de dirección
 // Una referencia es un alias de una variable existente
-	// No puede ser nula y no puede cambiar de objeto una vez inicializada.
+	// No puede ser nula y no puede cambiar de objeto una vez inicializada

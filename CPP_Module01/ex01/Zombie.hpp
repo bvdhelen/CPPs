@@ -19,7 +19,7 @@
 class Zombie
 {
 	private:
-		std::string _name;
+		std::string _name; // Atributo privado
 	public:
 		Zombie(); // Constructor por defecto
 		~Zombie(); // Destructor

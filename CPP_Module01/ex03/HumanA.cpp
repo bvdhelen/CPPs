@@ -12,9 +12,6 @@
 
 #include "HumanA.hpp"
 
-// LISTA DE INICIALIZACIÓN
-// Inicializa los atributos ANTES de que el cuerpo del constructor se ejecute
-	// : atributo(parámetro)
 // Una referencia debe inicializarse en el constructor
 	// No puede cambiar
 	// No puede ser NULL

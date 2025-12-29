@@ -13,8 +13,8 @@
 #ifndef HARL_HPP
 #define HARL_HPP
 
-#include <iostream>
-#include <string>
+#include <string> // std::string
+#include <iostream> // std::cout
 
 class Harl
 {

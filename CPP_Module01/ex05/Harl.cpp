@@ -12,16 +12,19 @@
 
 #include "Harl.hpp"
 
+// constructor por defecto
 Harl::Harl()
 {
 
 }
 
+// destructor por defecto
 Harl::~Harl()
 {
 
 }
 
+// funciones miembro (privadas) de la clase
 void	Harl::debug(void)
 {
 	std::cout << "[ DEBUG ]" << std::endl;
@@ -46,9 +49,8 @@ void	Harl::error(void)
 	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
-// Array de punteros a funciones miembro
-	// Lista de funciones
-	// Lista de palabras
+// función miembro (pública) de la clase
+// Array de punteros a funciones miembro (privadas) -> listas de funciones y niveles
 	// Llamar a la función del array:
 		// (this->*functions[0])()
 void	Harl::complain(std::string level)

@@ -19,12 +19,11 @@
 		filename.replace
 */
 
-	// std::ifstream -> input file stream -> abre el archivo
-	// std::ofstream -> output file stream -> crea el archivo si no existe
-
-#include <iostream>
-#include <fstream>
-#include <string>
+#include <string> // std::string
+#include <iostream> // std::cout, std::cerr
+#include <fstream> // std::ifstream, std::ofstream
+	// std::ifstream -> input file stream -> abre el archivo y permite leer
+	// std::ofstream -> output file stream -> crea el archivo si no existe y permite escribir
 
 // std::string::npos ("no position")
 	//Constante estática de std::string -> Valor no encontrado

@@ -39,7 +39,7 @@ $(NAME): $(SRCS)
 	@echo "$(GREY)Compiling...$(RESET)"
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(SRCS)
 	@echo
-	@echo "$(GREEN)<<< CPP01-ex05 compiled >>>$(RESET)"
+	@echo "$(GREEN)<<< CPP01-ex06 compiled >>>$(RESET)"
 	@echo
 
 clean:

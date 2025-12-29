@@ -12,16 +12,19 @@
 
 #include "Harl.hpp"
 
+// constructor por defecto
 Harl::Harl()
 {
 
 }
 
+// destructor por defecto
 Harl::~Harl()
 {
 
 }
 
+// funciones miembro (privadas) de la clase
 void	Harl::debug(void)
 {
 	std::cout << "[ DEBUG ]" << std::endl;
@@ -46,6 +49,7 @@ void	Harl::error(void)
 	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
+// función miembro (pública) de la clase
 void	Harl::complain(std::string level)
 {
 	std::string	levels[4] =

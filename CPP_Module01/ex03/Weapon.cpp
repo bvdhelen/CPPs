@@ -12,6 +12,10 @@
 
 #include "Weapon.hpp"
 
+// LISTA DE INICIALIZACIÓN
+// Inicializa los atributos ANTES de que el cuerpo del constructor se ejecute
+	// : atributo(parámetro)
+
 // Constructor
 Weapon::Weapon(std::string type) : _type(type)
 {

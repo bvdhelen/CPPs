@@ -13,8 +13,8 @@
 #ifndef WEAPON_HPP
 #define WEAPON_HPP
 
-#include <string>
-#include <iostream>
+#include <string> // std::string
+#include <iostream> // std::cout
 
 class Weapon
 {

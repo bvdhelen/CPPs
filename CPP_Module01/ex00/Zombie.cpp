@@ -15,19 +15,19 @@
 // Constructor
 Zombie::Zombie(std::string name)
 {
-	this->_name = name;
+	this->name = name;
 }
 
 // Destructor
 Zombie::~Zombie()
 {
-	std::cout << _name << " destroyed" << std::endl;
+	std::cout << name << " destroyed" << std::endl;
 }
 
 // Función miembro (announce)
 void	Zombie::announce(void)
 {
-	std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
 // NOTA:

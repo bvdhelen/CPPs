@@ -15,7 +15,7 @@
 // Constructor (por defecto vacío)
 Zombie::Zombie()
 {
-	static int	i= 1;
+	static int	i = 1;
 	std::cout << "Zombie_sin_nombre" << i << ": created" << std::endl;
 	i++;
 }

@@ -39,7 +39,7 @@ int	main(void)
 	d.attack("Nobody");
 	d.beRepaired(5);
 
-	std::cout << "\n===== END OF MAIN =====" << std::endl;
+	std::cout << "\n===== END =====" << std::endl;
 
 	//a.attack("B");
 	//b.takeDamage(5);

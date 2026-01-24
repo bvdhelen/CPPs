@@ -27,6 +27,6 @@ int	main(void)
 	ScavTrap	c;
 	c = b;
 
-	std::cout << "\n===== END OF MAIN =====" << std::endl;
+	std::cout << "\n===== END =====" << std::endl;
 	return (0);
 }

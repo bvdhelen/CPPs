@@ -30,6 +30,12 @@ int	main(void)
 	a.beRepaired(5);
 	a.takeDamage(3);
 
+	//a.attack("B");
+	//b.takeDamage(5);
+	//b.attack("A");
+	//a.takeDamage(0);
+	//a.beRepaired(5);
+	
 	std::cout << "\n===== ENERGY DRAIN TEST =====" << std::endl;
 	for (int i = 0;i < 11; i++)
 		b.attack("Target2");
@@ -40,12 +46,5 @@ int	main(void)
 	d.beRepaired(5);
 
 	std::cout << "\n===== END =====" << std::endl;
-
-	//a.attack("B");
-	//b.takeDamage(5);
-	//b.attack("A");
-	//a.takeDamage(0);
-	//a.beRepaired(5);
-
 	return (0);
 }

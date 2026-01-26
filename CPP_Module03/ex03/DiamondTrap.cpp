@@ -14,12 +14,15 @@
 
 // Constructor
 DiamondTrap::DiamondTrap(const std::string &name)
-	: ClapTrap(name + "_clap_name"), ScavTrap(), FragTrap()
+	: ClapTrap(name + "_clap_name"), FragTrap(), ScavTrap()
 {
 	this->name = name;
-	this->hitPoints = FragTrap::hitPoints;
-	this->energyPoints = ScavTrap::energyPoints;
-	this->attackDamage = FragTrap::attackDamage;
+	this->hitPoints = FragTrap::hitPoints; //100
+	this->energyPoints = ScavTrap::energyPoints; //50
+	this->attackDamage = FragTrap::attackDamage; //30
+	std::cout << this->hitPoints << std::endl;
+	std::cout << this->energyPoints << std::endl;
+	std::cout << this->attackDamage << std::endl;
 
 	std::cout << "DiamondTrap " << this->name << " has been created" << std::endl;
 }
@@ -32,19 +35,19 @@ DiamondTrap::~DiamondTrap()
 
 // Constructor por defecto
 DiamondTrap::DiamondTrap()
-	: ClapTrap("default_clap_name"), ScavTrap(), FragTrap()
+	: ClapTrap("default_clap_name"), FragTrap(), ScavTrap()
 {
 	this->name = "default";
-	this->hitPoints = FragTrap::hitPoints;
-	this->energyPoints = ScavTrap::energyPoints;
-	this->attackDamage = FragTrap::attackDamage;
+	this->hitPoints = FragTrap::hitPoints; //100
+	this->energyPoints = ScavTrap::energyPoints; //50
+	this->attackDamage = FragTrap::attackDamage; //30
 
 	std::cout << "DiamondTrap default constructor called" << std::endl;
 }
 
 //Constructor de copia
 DiamondTrap::DiamondTrap(const DiamondTrap &other)
-	: ClapTrap(other), ScavTrap(other), FragTrap(other)
+	: ClapTrap(other), FragTrap(other), ScavTrap(other)
 {
 	*this = other;
 	std::cout << "DiamondTrap copy constructor called" << std::endl;

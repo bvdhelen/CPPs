@@ -13,7 +13,7 @@
 #include "Fixed.hpp"
 
 // Constructor por defecto con lista de inicialización
-Fixed::Fixed() : _rawValue(0)
+Fixed::Fixed() : _value(0)
 {
 	std::cout << "Default constructor called" << std::endl;
 }
@@ -21,14 +21,14 @@ Fixed::Fixed() : _rawValue(0)
 // Constructor int
 Fixed::Fixed(const int value)
 {
-	_rawValue = value * 256;
+	this->_value = value * 256;
 	std::cout << "Int constructor called" << std::endl;
 }
 
 // Constructor float
 Fixed::Fixed(const float value)
 {
-	_rawValue = roundf(value * 256);
+	this->_value = roundf(value * 256);
 	std::cout << "Float constructor called" << std::endl;
 }
 
@@ -39,7 +39,7 @@ Fixed::~Fixed()
 }
 
 // Constructor de copia
-Fixed::Fixed(const Fixed &copy) : _rawValue(copy._rawValue)
+Fixed::Fixed(const Fixed &copy) : _value(copy._value)
 {
 	std::cout << "Copy constructor called" << std::endl;
 }
@@ -49,7 +49,7 @@ Fixed &Fixed::operator=(const Fixed &copy)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &copy)
-		_rawValue = copy._rawValue;
+		_value = copy._value;
 	return (*this);
 }
 
@@ -57,23 +57,23 @@ Fixed &Fixed::operator=(const Fixed &copy)
 int	Fixed::getRawBits(void) const
 {
 	std::cout << "getRawBits member function called" << std::endl;
-	return (this->_rawValue);
+	return (this->_value);
 }
 
 void	Fixed::setRawBits(int const raw)
 {
 	std::cout << "setRawBits member function called" << std::endl;
-	this->_rawValue = raw;
+	this->_value = raw;
 }
 
 float	Fixed::toFloat(void) const
 {
-	return (float)_rawValue / 256;
+	return (float)_value / 256;
 }
 
 int	Fixed::toInt(void) const
 {
-	return _rawValue / 256;
+	return _value / 256;
 }
 
 // función externa que imprime el Fixed como float

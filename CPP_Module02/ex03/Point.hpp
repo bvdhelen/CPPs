@@ -18,17 +18,17 @@
 class Point
 {
 	private:
-		const Fixed	_x;
-		const Fixed	_y;
+		const Fixed	x;
+		const Fixed	y;
 	public:
 		// constructor por defecto
 		Point();
 		// destructor
 		~Point();
 		// constructor de copia
-		Point(const Point &other);
+		Point(const Point &copy);
 		// Operador de asignación (se declara pero no se usa)
-		Point &operator=(const Point &other);
+		Point &operator=(const Point &copy);
 		
 		// constructor con coordenadas
 		Point(const float x, const float y);

@@ -19,7 +19,7 @@
 class Fixed
 {
 	private:
-		int	_rawValue;
+		int	_value;
 		static const int	_fractionalBits = 8;
 	public:
 		// constructor por defecto

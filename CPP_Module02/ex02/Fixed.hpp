@@ -19,7 +19,7 @@
 class Fixed
 {
 	private:
-		int	_rawValue;
+		int	_value;
 		static const int	_fractionalBits = 8;
 	public:
 		// constructor por defecto
@@ -62,7 +62,7 @@ class Fixed
 		Fixed	&operator--();
 		Fixed	operator--(int);
 
-		// FUNCIONES DE CLASE
+		// funciones de clase
 		static Fixed	&min(Fixed &a, Fixed &b);
 		static const Fixed	&min(const Fixed &a, const Fixed &b);
 
@@ -70,7 +70,7 @@ class Fixed
 		static const Fixed	&max(const Fixed &a, const Fixed &b);
 };
 
-// Cuando alguien haga "ostream << Fixed", quiero que sepas cómo imprimirlo
+// Cuando se haga "ostream << Fixed", quiero que sepas cómo imprimirlo
 std::ostream &operator<<(std::ostream &out, const Fixed &value);
 
 #endif

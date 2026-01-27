@@ -13,7 +13,7 @@
 #include "Point.hpp"
 
 // constructor por defecto
-Point::Point() : _x(0), _y(0)
+Point::Point() : x(0), y(0)
 {
 
 }
@@ -25,32 +25,33 @@ Point::~Point()
 }
 
 // constructor con coordenadas
-Point::Point(const float x, const float y) : _x(x), _y(y)
+Point::Point(const float x, const float y) : x(x), y(y)
 {
 
 }
 
 // constructor de copia
-Point::Point(const Point &other) : _x(other._x), _y(other._y)
+Point::Point(const Point &copy) : x(copy.x), y(copy.y)
 {
 
 }
 
 // Operador de asignación (se declara pero no se usa)
-Point	&Point::operator=(const Point &other)
+Point	&Point::operator=(const Point &copy)
 {
-	(void)other;
+	//if (this != &copy)
+		//_value = copy._value;
+	(void)copy;
 	return (*this);
 }
 
-// Funciones miembro
-	// getters
+// Funciones miembro (getters)
 Fixed	Point::getX() const
 {
-	return (_x);
+	return (x);
 }
 
 Fixed	Point::getY() const
 {
-	return (_y);
+	return (y);
 }

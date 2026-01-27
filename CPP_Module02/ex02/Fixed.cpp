@@ -13,7 +13,7 @@
 #include "Fixed.hpp"
 
 // Constructor por defecto con lista de inicialización
-Fixed::Fixed() : _rawValue(0)
+Fixed::Fixed() : _value(0)
 {
 	//std::cout << "Default constructor called" << std::endl;
 }
@@ -21,14 +21,14 @@ Fixed::Fixed() : _rawValue(0)
 // Constructor int
 Fixed::Fixed(const int value)
 {
-	_rawValue = value * 256;
+	this->_value = value * 256;
 	//std::cout << "Int constructor called" << std::endl;
 }
 
 // Constructor float
 Fixed::Fixed(const float value)
 {
-	_rawValue = roundf(value * 256);
+	this->_value = roundf(value * 256);
 	//std::cout << "Float constructor called" << std::endl;
 }
 
@@ -39,7 +39,7 @@ Fixed::~Fixed()
 }
 
 // Constructor de copia
-Fixed::Fixed(const Fixed &copy) : _rawValue(copy._rawValue)
+Fixed::Fixed(const Fixed &copy) : _value(copy._value)
 {
 	//std::cout << "Copy constructor called" << std::endl;
 }
@@ -49,7 +49,7 @@ Fixed &Fixed::operator=(const Fixed &copy)
 {
 	//std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &copy)
-		_rawValue = copy._rawValue;
+		_value = copy._value;
 	return (*this);
 }
 
@@ -57,69 +57,69 @@ Fixed &Fixed::operator=(const Fixed &copy)
 int	Fixed::getRawBits(void) const
 {
 	//std::cout << "getRawBits member function called" << std::endl;
-	return (this->_rawValue);
+	return (this->_value);
 }
 
 void	Fixed::setRawBits(int const raw)
 {
 	//std::cout << "setRawBits member function called" << std::endl;
-	this->_rawValue = raw;
+	this->_value = raw;
 }
 
 float	Fixed::toFloat(void) const
 {
-	return ((float)_rawValue / 256);
+	return ((float)_value / 256);
 }
 
 int	Fixed::toInt(void) const
 {
-	return (_rawValue / 256);
+	return (_value / 256);
 }
 
-// función externa que imprime el Fixed como float
+// Función externa que imprime el Fixed como float
 std::ostream &operator<<(std::ostream &out, const Fixed &value)
 {
 	out << value.toFloat();
 	return (out);
 }
 
-// operadores de comparación (si x > y entonces x·256 > y·256)
+// Operadores de comparación (si x > y entonces x·256 > y·256)
 bool	Fixed::operator>(const Fixed &other) const
 {
-	return (this->_rawValue > other._rawValue);
+	return (this->_value > other._value);
 }
 
 bool	Fixed::operator<(const Fixed &other) const
 {
-	return (this->_rawValue < other._rawValue);
+	return (this->_value < other._value);
 }
 
 bool	Fixed::operator>=(const Fixed &other) const
 {
-	return (this->_rawValue >= other._rawValue);
+	return (this->_value >= other._value);
 }
 
 bool	Fixed::operator<=(const Fixed &other) const
 {
-	return (this->_rawValue <= other._rawValue);
+	return (this->_value <= other._value);
 }
 
 bool	Fixed::operator==(const Fixed &other) const
 {
-	return (this->_rawValue == other._rawValue);
+	return (this->_value == other._value);
 }
 
 bool	Fixed::operator!=(const Fixed &other) const
 {
-	return (this->_rawValue != other._rawValue);
+	return (this->_value != other._value);
 }
 
-// operadores aritméticos ()
+// Operadores aritméticos ()
 Fixed	Fixed::operator+(const Fixed &other) const
 {
 	Fixed	result;
 
-	result._rawValue = this->_rawValue + other._rawValue;
+	result._value = this->_value + other._value;
 	return (result);
 }
 
@@ -127,7 +127,7 @@ Fixed	Fixed::operator-(const Fixed &other) const
 {
 	Fixed	result;
 
-	result._rawValue = this->_rawValue - other._rawValue;
+	result._value = this->_value - other._value;
 	return (result);
 }
 
@@ -136,7 +136,7 @@ Fixed	Fixed::operator*(const Fixed &other) const
 	Fixed	result;
 	long	temp;
 
-	temp = (long)this->_rawValue * (long)other._rawValue;
+	temp = (long)this->_value * (long)other._value;
 	result.setRawBits(temp / 256);
 	return (result);
 }
@@ -146,15 +146,15 @@ Fixed	Fixed::operator/(const Fixed &other) const
 	Fixed	result;
 	long	temp;
 
-	temp = ((long)this->_rawValue * 256);
-	result.setRawBits(temp / other._rawValue);
+	temp = ((long)this->_value * 256);
+	result.setRawBits(temp / other._value);
 	return (result);
 }
 
-// operadores de incremento/decremento
+// Operadores de incremento/decremento
 Fixed	&Fixed::operator++()
 {
-	_rawValue += 1;
+	_value += 1;
 	return (*this);
 }
 
@@ -162,13 +162,13 @@ Fixed	Fixed::operator++(int)
 {
 	Fixed	temp(*this);
 
-	_rawValue += 1;
+	_value += 1;
 	return (temp);
 }
 
 Fixed	&Fixed::operator--()
 {
-	_rawValue -= 1;
+	_value -= 1;
 	return (*this);
 }
 
@@ -176,11 +176,11 @@ Fixed	Fixed::operator--(int)
 {
 	Fixed	temp(*this);
 
-	_rawValue -= 1;
+	_value -= 1;
 	return (temp);
 }
 
-// funciones de clase
+// Funciones de clase
 Fixed	&Fixed::min(Fixed &a, Fixed &b)
 {
 	if (a < b)

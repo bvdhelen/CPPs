@@ -24,15 +24,15 @@ int	main(void)
 	
 	// Punto fuera
 	Point	p2(5, 5);
-	std::cout << "p2 inside: " << bsp(a, b, c, p2) << std::endl;
+	std::cout << "p2 outside: " << bsp(a, b, c, p2) << std::endl;
 	
 	// Punto en borde
 	Point	p3(2.5f, 0);
-	std::cout << "p3 inside (edge): " << bsp(a, b, c, p3) << std::endl;
+	std::cout << "p3 edge: " << bsp(a, b, c, p3) << std::endl;
 	
 	// Punto en vértice
 	Point	p4(0, 0);
-	std::cout << "p4 inside (vertex): " << bsp(a, b, c, p4) << std::endl;
+	std::cout << "p4 vertex: " << bsp(a, b, c, p4) << std::endl;
 
 	return (0);
 }

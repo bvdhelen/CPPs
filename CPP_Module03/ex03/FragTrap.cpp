@@ -38,23 +38,23 @@ FragTrap::FragTrap() : ClapTrap()
 	std::cout << "FragTrap default constructor called" << std::endl;
 }
 
-//Constructor de copia
-FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other)
+// Constructor de copia
+FragTrap::FragTrap(const FragTrap &copy) : ClapTrap(copy)
 {
-	*this = other;
+	*this = copy;
 	std::cout << "FragTrap copy constructor called" << std::endl;
 }
 
-//Operador de asignación
-FragTrap	&FragTrap::operator=(const FragTrap &other)
+// Operador de asignación
+FragTrap	&FragTrap::operator=(const FragTrap &copy)
 {
-	if (this != &other)
-		ClapTrap::operator=(other);
-	std::cout << "FragTrap assignment operator called" << std::endl;
+	if (this != &copy)
+		ClapTrap::operator=(copy);
+	std::cout << "FragTrap copy assignment operator called" << std::endl;
 	return (*this);
 }
 
-// FUNCIONES MIEMBRO
+// Funciones miembro
 void	FragTrap::highFivesGuys(void)
 {
 	std::cout << "FragTrap " << this->name << " requests a positive high five!" << std::endl;

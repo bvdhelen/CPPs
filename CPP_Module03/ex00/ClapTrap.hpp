@@ -31,10 +31,10 @@ class ClapTrap
 		~ClapTrap();
 		// Constructor por defecto
 		ClapTrap();
-		//Constructor de copia
-		ClapTrap(const ClapTrap &other);
-		//Operador de asignación
-		ClapTrap &operator=(const ClapTrap &other);
+		// Constructor de copia
+		ClapTrap(const ClapTrap &copy);
+		// Operador de asignación
+		ClapTrap &operator=(const ClapTrap &copy);
 
 		// Funciones miembro
 		void	attack(const std::string &target);

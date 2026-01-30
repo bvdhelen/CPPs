@@ -24,10 +24,10 @@ class ScavTrap : public ClapTrap
 		~ScavTrap();
 		// Constructor por defecto
 		ScavTrap();
-		//Constructor de copia
-		ScavTrap(const ScavTrap &other);
-		//Operador de asignación
-		ScavTrap &operator=(const ScavTrap &other);
+		// Constructor de copia
+		ScavTrap(const ScavTrap &copy);
+		// Operador de asignación
+		ScavTrap &operator=(const ScavTrap &copy);
 		
 		// Funciones miembro
 		void	attack(const std::string &target);

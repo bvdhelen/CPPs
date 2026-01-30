@@ -45,27 +45,27 @@ DiamondTrap::DiamondTrap()
 	std::cout << "DiamondTrap default constructor called" << std::endl;
 }
 
-//Constructor de copia
-DiamondTrap::DiamondTrap(const DiamondTrap &other)
-	: ClapTrap(other), FragTrap(other), ScavTrap(other)
+// Constructor de copia
+DiamondTrap::DiamondTrap(const DiamondTrap &copy)
+	: ClapTrap(copy), FragTrap(copy), ScavTrap(copy)
 {
-	*this = other;
+	*this = copy;
 	std::cout << "DiamondTrap copy constructor called" << std::endl;
 }
 
-//Operador de asignación
-DiamondTrap	&DiamondTrap::operator=(const DiamondTrap &other)
+// Operador de asignación
+DiamondTrap	&DiamondTrap::operator=(const DiamondTrap &copy)
 {
-	if (this != &other)
+	if (this != &copy)
 	{
-		ClapTrap::operator=(other);
-		this->name = other.name;
+		ClapTrap::operator=(copy);
+		this->name = copy.name;
 	}
-	std::cout << "DiamondTrap assignment operator called" << std::endl;
+	std::cout << "DiamondTrap copy assignment operator called" << std::endl;
 	return (*this);
 }
 
-// FUNCIONES MIEMBRO
+// Funciones miembro
 void	DiamondTrap::attack(const std::string &target)
 {
 	ScavTrap::attack(target);

@@ -24,10 +24,10 @@ class FragTrap : virtual public ClapTrap
 		~FragTrap();
 		// Constructor por defecto
 		FragTrap();
-		//Constructor de copia
-		FragTrap(const FragTrap &other);
-		//Operador de asignación
-		FragTrap &operator=(const FragTrap &other);
+		// Constructor de copia
+		FragTrap(const FragTrap &copy);
+		// Operador de asignación
+		FragTrap &operator=(const FragTrap &copy);
 		
 		// Funciones miembro
 		void	highFivesGuys(void);

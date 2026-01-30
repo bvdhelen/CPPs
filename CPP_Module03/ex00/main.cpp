@@ -37,7 +37,7 @@ int	main(void)
 	//a.beRepaired(5);
 	
 	std::cout << "\n===== ENERGY DRAIN TEST =====" << std::endl;
-	for (int i = 0;i < 11; i++)
+	for (int i = 0; i < 11; i++)
 		b.attack("Target2");
 	
 	std::cout << "\n===== DEAD CLAPTRAP TEST =====" << std::endl;

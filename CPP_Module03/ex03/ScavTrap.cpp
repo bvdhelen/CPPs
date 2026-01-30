@@ -38,23 +38,23 @@ ScavTrap::ScavTrap() : ClapTrap()
 	std::cout << "ScavTrap default constructor called" << std::endl;
 }
 
-//Constructor de copia
-ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
+// Constructor de copia
+ScavTrap::ScavTrap(const ScavTrap &copy) : ClapTrap(copy)
 {
-	*this = other;
+	*this = copy;
 	std::cout << "ScavTrap copy constructor called" << std::endl;
 }
 
-//Operador de asignación
-ScavTrap	&ScavTrap::operator=(const ScavTrap &other)
+// Operador de asignación
+ScavTrap	&ScavTrap::operator=(const ScavTrap &copy)
 {
-	if (this != &other)
-		ClapTrap::operator=(other);
-	std::cout << "ScavTrap assignment operator called" << std::endl;
+	if (this != &copy)
+		ClapTrap::operator=(copy);
+	std::cout << "ScavTrap copy assignment operator called" << std::endl;
 	return (*this);
 }
 
-// FUNCIONES MIEMBRO
+// Funciones miembro
 void	ScavTrap::attack(const std::string &target)
 {
 	if (this->hitPoints <= 0 || this->energyPoints <= 0)

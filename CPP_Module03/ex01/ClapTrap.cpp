@@ -40,24 +40,24 @@ ClapTrap::ClapTrap()
 	std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
-//Constructor de copia
-ClapTrap::ClapTrap(const ClapTrap &other)
+// Constructor de copia
+ClapTrap::ClapTrap(const ClapTrap &copy)
 {
-	*this = other;
+	*this = copy;
 	std::cout << "ClapTrap copy constructor called" << std::endl;
 }
 
-//Operador de asignación
-ClapTrap	&ClapTrap::operator=(const ClapTrap &other)
+// Operador de asignación
+ClapTrap	&ClapTrap::operator=(const ClapTrap &copy)
 {
-	if (this != &other)
+	if (this != &copy)
 	{
-		this->name = other.name;
-		this->hitPoints = other.hitPoints;
-		this->energyPoints = other.energyPoints;
-		this->attackDamage = other.attackDamage;
+		this->name = copy.name;
+		this->hitPoints = copy.hitPoints;
+		this->energyPoints = copy.energyPoints;
+		this->attackDamage = copy.attackDamage;
 	}
-	std::cout << "ClapTrap assignment operator called" << std::endl;
+	std::cout << "ClapTrap copy assignment operator called" << std::endl;
 	return (*this);
 }
 

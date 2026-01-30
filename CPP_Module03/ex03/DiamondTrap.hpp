@@ -27,10 +27,10 @@ class DiamondTrap : public FragTrap, public ScavTrap
 		~DiamondTrap();
 		// Constructor por defecto
 		DiamondTrap();
-		//Constructor de copia
-		DiamondTrap(const DiamondTrap &other);
-		//Operador de asignación
-		DiamondTrap &operator=(const DiamondTrap &other);
+		// Constructor de copia
+		DiamondTrap(const DiamondTrap &copy);
+		// Operador de asignación
+		DiamondTrap &operator=(const DiamondTrap &copy);
 		
 		// Funciones miembro
 		void	attack(const std::string &target);

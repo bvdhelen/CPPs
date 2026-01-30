@@ -12,6 +12,15 @@
 
 #include "Fixed.hpp"
 
+/*RESUMEN:
+
+La clase Fixed representa números en punto fijo usando un entero escalado por 256.
+Los operadores trabajan directamente con ese entero para evitar pérdidas de precisión.
+Los incrementos modifican el valor mínimo representable (1/256).
+Las funciones miembro actúan sobre un objeto concreto (toFloat, toInt...),
+mientras que las funciones de clase (min y max) no dependen de ningún objeto.
+*/
+
 // Constructor por defecto con lista de inicialización
 Fixed::Fixed() : _value(0)
 {
@@ -26,6 +35,7 @@ Fixed::Fixed(const int value)
 }
 
 // Constructor float
+	// Uso roundf porque redondeo para no perder precisión (el cast trunca)
 Fixed::Fixed(const float value)
 {
 	this->_value = roundf(value * 256);
@@ -114,7 +124,8 @@ bool	Fixed::operator!=(const Fixed &other) const
 	return (this->_value != other._value);
 }
 
-// Operadores aritméticos ()
+// Operadores aritméticos
+	// Suma y resta directa porque están en la misma escala
 Fixed	Fixed::operator+(const Fixed &other) const
 {
 	Fixed	result;
@@ -131,6 +142,7 @@ Fixed	Fixed::operator-(const Fixed &other) const
 	return (result);
 }
 
+	// Multiplicación (x·256 * y·256) / 256 = (x·y)/256
 Fixed	Fixed::operator*(const Fixed &other) const
 {
 	Fixed	result;
@@ -141,6 +153,7 @@ Fixed	Fixed::operator*(const Fixed &other) const
 	return (result);
 }
 
+	// División (x·256 / y·256) * 256 = (x/y)·256
 Fixed	Fixed::operator/(const Fixed &other) const
 {
 	Fixed	result;
@@ -151,25 +164,27 @@ Fixed	Fixed::operator/(const Fixed &other) const
 	return (result);
 }
 
-// Operadores de incremento/decremento
+// Operadores de incremento/decremento: La unidad mínima es 1/256
+	// PRE-incremento: Devuelve el valor incrementado
 Fixed	&Fixed::operator++()
 {
 	_value += 1;
 	return (*this);
 }
 
+Fixed	&Fixed::operator--()
+{
+	_value -= 1;
+	return (*this);
+}
+
+	// POST-incremento: Devuelve copia del valor anterior
 Fixed	Fixed::operator++(int)
 {
 	Fixed	temp(*this);
 
 	_value += 1;
 	return (temp);
-}
-
-Fixed	&Fixed::operator--()
-{
-	_value -= 1;
-	return (*this);
 }
 
 Fixed	Fixed::operator--(int)

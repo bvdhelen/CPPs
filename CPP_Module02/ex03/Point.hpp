@@ -15,6 +15,8 @@
 
 #include "Fixed.hpp"
 
+// Un Point representa una posición fija en el plano, por eso sus coordenadas son constantes
+
 class Point
 {
 	private:

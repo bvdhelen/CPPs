@@ -36,7 +36,7 @@ Point::Point(const Point &copy) : x(copy.x), y(copy.y)
 
 }
 
-// Operador de asignación (se declara pero no se usa)
+// Operador de asignación (se declara pero no hace nada porque los atributos son constantes)
 Point	&Point::operator=(const Point &copy)
 {
 	//if (this != &copy)

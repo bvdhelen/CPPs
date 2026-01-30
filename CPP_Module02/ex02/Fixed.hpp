@@ -58,11 +58,11 @@ class Fixed
 
 		// 4 operadores de incremento/decremento
 		Fixed	&operator++();
-		Fixed	operator++(int);
 		Fixed	&operator--();
+		Fixed	operator++(int);
 		Fixed	operator--(int);
 
-		// funciones de clase
+		// funciones de clase (static)
 		static Fixed	&min(Fixed &a, Fixed &b);
 		static const Fixed	&min(const Fixed &a, const Fixed &b);
 

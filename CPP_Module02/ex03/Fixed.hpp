@@ -19,7 +19,7 @@
 class Fixed
 {
 	private:
-		int	_rawValue;
+		int	_value;
 		static const int	_fractionalBits = 8;
 	public:
 		// constructor por defecto
@@ -58,8 +58,8 @@ class Fixed
 
 		// 4 operadores de incremento/decremento
 		Fixed	&operator++();
-		Fixed	operator++(int);
 		Fixed	&operator--();
+		Fixed	operator++(int);
 		Fixed	operator--(int);
 
 		// FUNCIONES DE CLASE

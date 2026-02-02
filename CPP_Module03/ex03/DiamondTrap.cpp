@@ -75,10 +75,10 @@ DiamondTrap	&DiamondTrap::operator=(const DiamondTrap &copy)
 }
 
 // Funciones miembro
-void	DiamondTrap::attack(const std::string &target)
-{
-	ScavTrap::attack(target);
-}
+//void	DiamondTrap::attack(const std::string &target)
+//{
+//	ScavTrap::attack(target);
+//}
 
 void	DiamondTrap::whoAmI()
 {

@@ -33,7 +33,8 @@ class DiamondTrap : public FragTrap, public ScavTrap
 		DiamondTrap &operator=(const DiamondTrap &copy);
 		
 		// Funciones miembro
-		void	attack(const std::string &target);
+		// void	attack(const std::string &target);
+		using ScavTrap::attack;
 		void	whoAmI();
 };
 

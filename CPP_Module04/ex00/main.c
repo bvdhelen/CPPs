@@ -6,7 +6,7 @@
 /*   By: eldiaz-c <eldiaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 17:58:17 by eldiaz-c          #+#    #+#             */
-/*   Updated: 2026/02/02 18:00:38 by eldiaz-c         ###   ########.fr       */
+/*   Updated: 2026/02/02 19:10:18 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ int main(void)
 
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
+    i->makeSound(); //will output the cat sound!
+    j->makeSound();
+    meta->makeSound();
 
-
-
+    return (0);
 }

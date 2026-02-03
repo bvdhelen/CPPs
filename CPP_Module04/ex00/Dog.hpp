@@ -3,10 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eldiaz-c <eldiaz-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eldiaz-c <eldiaz-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 19:11:17 by eldiaz-c          #+#    #+#             */
-/*   Updated: 2026/02/02 19:11:18 by eldiaz-c         ###   ########.fr       */
+/*   Updated: 2026/02/03 11:12:51 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef DOG_HPP
+#define DOG_HPP
+
+#include "Animal.hpp"
+
+class Dog : public Animal
+{
+	public:
+		// Constructor (por defecto)
+		Dog();
+		// Destructor
+		virtual ~Dog();
+		// Constructor de copia
+		Dog(const Dog &copy);
+		// Operador de asignación
+		Dog &operator=(const Dog &copy);
+		
+		// Funciones miembro
+		void	makeSound() const;		
+};
+
+#endif

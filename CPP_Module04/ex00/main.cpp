@@ -6,7 +6,7 @@
 /*   By: eldiaz-c <eldiaz-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 17:58:17 by eldiaz-c          #+#    #+#             */
-/*   Updated: 2026/02/03 12:18:41 by eldiaz-c         ###   ########.fr       */
+/*   Updated: 2026/02/04 12:14:31 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,10 @@ int main(void)
     j->makeSound();
     meta->makeSound();
 
+	delete meta;
+	delete j;
+	delete i;
+	
     return (0);
 }
 
@@ -63,7 +67,7 @@ int main(void)
 	return (0);
 }*/
 
-//	MAIN WRONG ANIMALS
+//	MAIN GOOD-WRONG ANIMALS
 /*int	main(void)
 {
 	std::cout << "=== Correct polymorphism ===" << std::endl;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eldiaz-c <eldiaz-c@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bvdhelen <bvdhelen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 19:11:15 by eldiaz-c          #+#    #+#             */
-/*   Updated: 2026/02/03 11:01:24 by eldiaz-c         ###   ########.fr       */
+/*   Updated: 2026/02/20 13:26:20 by bvdhelen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,5 @@ Dog	&Dog::operator=(const Dog &copy)
 // Funciones miembro
 void	Dog::makeSound() const
 {
-	std::cout << "Woof! Woof!" << std::endl;
+	std::cout << "Guau! Guau!" << std::endl;
 }

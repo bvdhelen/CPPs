@@ -6,7 +6,7 @@
 /*   By: bvdhelen <bvdhelen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 19:11:15 by eldiaz-c          #+#    #+#             */
-/*   Updated: 2026/02/20 13:04:48 by bvdhelen         ###   ########.fr       */
+/*   Updated: 2026/02/20 13:25:53 by bvdhelen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,5 @@ Dog	&Dog::operator=(const Dog &copy)
 
 void	Dog::makeSound() const
 {
-	std::cout << "Woof! Woof!" << std::endl;
+	std::cout << "Guau! Guau!" << std::endl;
 }

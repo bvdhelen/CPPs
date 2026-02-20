@@ -12,26 +12,22 @@
 
 #include "Brain.hpp"
 
-// Constructor
 Brain::Brain()
 {
 	std::cout << "Brain constructor called" << std::endl;
 }
 
-// Destructor
 Brain::~Brain()
 {
 	std::cout << "Brain destructor called" << std::endl;
 }
 
-// Constructor de copia
 Brain::Brain(const Brain &copy)
 {
 	std::cout << "Brain copy constructor called" << std::endl;
 	*this = copy;
 }
 
-// Operador de asignación
 Brain	&Brain::operator=(const Brain &copy)
 {
 	std::cout << "Brain copy assignment operator called" << std::endl;

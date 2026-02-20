@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eldiaz-c <eldiaz-c@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bvdhelen <bvdhelen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 19:11:17 by eldiaz-c          #+#    #+#             */
-/*   Updated: 2026/02/08 21:08:05 by eldiaz-c         ###   ########.fr       */
+/*   Updated: 2026/02/20 13:04:02 by bvdhelen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,11 @@ class Dog : public Animal
 	private:
 		Brain	*brain;
 	public:
-		// Constructor (por defecto)
 		Dog();
-		// Destructor
 		virtual ~Dog();
-		// Constructor de copia
 		Dog(const Dog &copy);
-		// Operador de asignación
 		Dog &operator=(const Dog &copy);
-		
-		// Funciones miembro
+
 		void	makeSound() const;		
 };
 

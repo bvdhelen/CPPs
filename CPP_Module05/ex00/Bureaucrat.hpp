@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bvdhelen <bvdhelen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/05 14:20:28 by bvdhelen          #+#    #+#             */
-/*   Updated: 2026/07/05 14:30:48 by bvdhelen         ###   ########.fr       */
+/*   Created: 2026/07/23 12:52:03 by bvdhelen          #+#    #+#             */
+/*   Updated: 2026/07/23 12:52:05 by bvdhelen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,45 @@
 
 #include <string>
 #include <exception>
+#include <iostream>
 
-class Bureaucrat
+class	Bureaucrat
 {
-    private:
-    	const std::string	_name;
-    	int	_grade;
-    public:
-		// Constructor
-        
-		// Constructor por defecto
+	private:
+		const std::string	_name;
+		int			_grade;
+	public:
+		Bureaucrat(const std::string &name, int grade);
 		Bureaucrat();
-		// Destructor
-        ~Bureaucrat();
-		// Constructor de copia
-		Bureaucrat(const Bureaucrat &copy);
-		// Operador de asignación
-		Bureaucrat &operator=(const Bureaucrat &copy);
-
-		// Funciones miembro
+		Bureaucrat(const Bureaucrat &other);
+		Bureaucrat &operator=(const Bureaucrat &other);
+		~Bureaucrat();
 		
+		//getters
+		const std::string &getName() const;
+		int getGrade() const;
+		
+		//cambiar grade??
+		void incrementGrade();
+		void decrementGrade();
+
+		//exceptions
+		class GradeTooHighException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+
+		};
+
+		class GradeTooLowException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+
+		};
+
 };
+
+std::ostream	&operator<<(std::ostream &out, const Bureaucrat &bureaucrat);
 
 #endif

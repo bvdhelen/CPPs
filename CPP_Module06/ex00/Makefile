@@ -6,7 +6,7 @@
 #    By: bvdhelen <bvdhelen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/07/23 12:51:23 by bvdhelen          #+#    #+#              #
-#    Updated: 2026/07/27 12:29:53 by bvdhelen         ###   ########.fr        #
+#    Updated: 2026/07/27 15:36:05 by bvdhelen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@echo "$(GREY)Compiling...$(RESET)"
-	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+	@$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 	@echo
 	@echo "$(GREEN)<<< CPP06-ex00 compiled >>>$(RESET)"
 	@echo

@@ -6,7 +6,7 @@
 /*   By: bvdhelen <bvdhelen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 13:41:12 by bvdhelen          #+#    #+#             */
-/*   Updated: 2026/07/27 12:39:40 by bvdhelen         ###   ########.fr       */
+/*   Updated: 2026/07/27 16:21:58 by bvdhelen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <cfloat> // DBL_* y FLT_*
 #include <cstdlib> //strtod()
 #include <iomanip> //std::fixed y std::setprecision(1)
+#include <cmath> //isnan(), isinf()
 
 //OCF
 ScalarConverter::ScalarConverter()
@@ -37,7 +38,7 @@ ScalarConverter::~ScalarConverter()
 {
 }
 
-//funciones miembro
+//otras funciones
 static bool isChar(const std::string &str)
 {
 	return (str.size() == 1 && !std::isdigit(str[0]));
@@ -65,59 +66,40 @@ static bool isInt(const std::string &str)
 
 static bool isDecimal(const std::string &str, bool hasSuffixF)
 {
-    bool dotFound = false;
-    bool digitBeforeDot = false;
-    bool digitAfterDot = false;
-    if (str.empty())
-        return false;
-
     std::size_t i = 0;
-    
+    std::size_t end = str.size();
+    bool dot = false;
+    bool digit = false;
+
+    if (str.empty())
+        return false;    
     if (str[i] == '+' || str[i] == '-')
-    {   
-        if (str.size() == 1)
-            return false;
+    {
         i++;
     }
-	std::size_t end = str.size();
-	if (!hasSuffixF && str.find('f') != std::string::npos)
-    return false;
+	if (i == end)
+        return false;
 	if (hasSuffixF)
     {
-        if (str[str.size() - 1] != 'f')
+        if (str[end - 1] != 'f')
             return false;
         end--;
     }
-
     while (i < end)
     {
         if (std::isdigit(str[i]))
-        {
-            if (!dotFound)
-                digitBeforeDot = true;
-            else
-                digitAfterDot = true;
-        }
+            digit = true;
         else if (str[i] == '.')
         {
-            if (dotFound)
+            if (dot)
                 return false;
-
-            if (!digitBeforeDot)
-                return false;
-            dotFound = true;
+            dot = true;
         }
         else
             return false;
         i++;
     }
-    if (!dotFound)
-        return false;
-    if (!digitBeforeDot)
-        return false;
-    if (!digitAfterDot)
-        return false;
-    return true;
+    return (dot && digit);
 }
 
 static bool isFloat(const std::string &str)
@@ -130,118 +112,23 @@ static bool isDouble(const std::string &str)
     return isDecimal(str, false);
 }
 
-
-/* TENGO QUE ENTENDER LA QUE ESTA AHI
-static bool isFloat(const std::string &str)
+static LiteralType detectPseudoLiteral(const std::string &str)
 {
-	bool dotFound = false;
-	bool digitBeforeDot = false;
-	bool digitAfterDot = false;
-
-    if (str.empty())
-        return false;
-
-    std::size_t i = 0;
-
-    if (str[i] == '+' || str[i] == '-')
-    {
-        if (str.size() == 1)
-            return false;
-        i++;
-    }
-    while (i < str.size())
-{
-    if (std::isdigit(str[i]))
-    {
-        if (!dotFound)
-            digitBeforeDot = true;
-        else
-            digitAfterDot = true;
-    }
-    else if (str[i] == '.')
-    {
-        if (dotFound)
-            return false;
-        if (!digitBeforeDot)
-            return false;
-        dotFound = true;
-    }
-    else if (str[i] == 'f')
-    {
-        if (i != str.size() - 1)
-            return false;
-    }
-    else
-        return false;
-
-    i++;
+    if (str == "nanf" || str == "+inff" || str == "-inff")
+        return PSEUDO_FLOAT;
+    if (str == "nan" || str == "+inf" || str == "-inf")
+        return PSEUDO_DOUBLE;
+    return INVALID;
 }
-	if (!dotFound)
-		return false;
-	if (!digitBeforeDot)
-		return false;
-	if (!digitAfterDot)
-		return false;
-	return true;
-}
-
-static bool isDouble(const std::string &str)
-{
-	bool dotFound = false;
-	bool digitBeforeDot = false;
-	bool digitAfterDot = false;
-
-    if (str.empty())
-        return false;
-
-    std::size_t i = 0;
-
-    if (str[i] == '+' || str[i] == '-')
-    {
-        if (str.size() == 1)
-            return false;
-        i++;
-    }
-    while (i < str.size())
-{
-    if (std::isdigit(str[i]))
-    {
-        if (!dotFound)
-            digitBeforeDot = true;
-        else
-            digitAfterDot = true;
-    }
-    else if (str[i] == '.')
-    {
-        if (dotFound)
-            return false;
-        if (!digitBeforeDot)
-            return false;
-        dotFound = true;
-    }
-    else if (str[i] == 'f')
-	    return false;
-    else
-        return false;
-
-    i++;
-}
-	if (!dotFound)
-		return false;
-	if (!digitBeforeDot)
-		return false;
-	if (!digitAfterDot)
-		return false;
-	return true;
-}
-*/
 
 static LiteralType detectType(const std::string &str)
 {
+    LiteralType pseudo = detectPseudoLiteral(str);
+
+    if (pseudo != INVALID)
+        return pseudo;
     if (isChar(str))
         return CHAR;
-    //if (isPseudoLiteral(str))
-        //return PSEUDO;
     if (isInt(str))
         return INT;
     if (isFloat(str))
@@ -251,64 +138,112 @@ static LiteralType detectType(const std::string &str)
     return INVALID;
 }
 
-static void printConversions(double value)
+static void printNan(void)
+{
+    std::cout << "char: impossible" << std::endl;
+    std::cout << "int: impossible" << std::endl;
+    std::cout << "float: nanf" << std::endl;
+    std::cout << "double: nan" << std::endl;
+}
+
+static void printInf(double value)
+{
+    std::cout << "char: impossible" << std::endl;
+    std::cout << "int: impossible" << std::endl;
+    if (value > 0)
+    {
+        std::cout << "float: +inff" << std::endl;
+        std::cout << "double: +inf" << std::endl;
+    }
+    else
+    {
+        std::cout << "float: -inff" << std::endl;
+        std::cout << "double: -inf" << std::endl;
+    }
+}
+
+static void printChar(double value)
 {
     char c = static_cast<char>(value);
-    int i = static_cast<int>(value);
-    float f = static_cast<float>(value);
-    double d = value;
-
-    bool hasFraction = (value != static_cast<int>(value));
 
     std::cout << "char: ";
-    if (hasFraction)
-        std::cout << "impossible" << std::endl;
-    else if (value < CHAR_MIN || value > CHAR_MAX)
-        std::cout << "impossible" << std::endl;
+    if (value != static_cast<int>(value) || value < CHAR_MIN || value > CHAR_MAX)
+        std::cout << "impossible";
     else if (!isprint(c))
-        std::cout << "Non displayable" << std::endl;
+        std::cout << "Non displayable";
     else
-        std::cout << "'" << c << "'" << std::endl;
+        std::cout << "'" << c << "'";
+    std::cout << std::endl;
+}
 
+static void printInt(double value)
+{
+    int i = static_cast<int>(value);
+    
     std::cout << "int: ";
-    if (hasFraction)
-        std::cout << "impossible" << std::endl;
-    else if (value < INT_MIN || value > INT_MAX)
-        std::cout << "impossible" << std::endl;
+    if (value != static_cast<int>(value) || value < INT_MIN || value > INT_MAX)
+        std::cout << "impossible";
     else
-        std::cout << i << std::endl;
+        std::cout << i;
+    std::cout << std::endl;
+}
+
+static void printFloat(double value)
+{
+    float f = static_cast<float>(value);
 
     std::cout << "float: ";
     if (value > FLT_MAX || value < -FLT_MAX)
-        std::cout << "impossible" << std::endl;
+        std::cout << "impossible";
     else
-        std::cout << std::fixed << std::setprecision(1) << f << "f" << std::endl;
-    
-    std::cout << "double: " << std::fixed << std::setprecision(1) << d << std::endl;
-
+        std::cout << std::fixed << std::setprecision(1) << f << "f";
+    std::cout << std::endl;
 }
 
+static void printDouble(double value)
+{
+    std::cout << "double: " << std::fixed << std::setprecision(1) << value << std::endl;
+}
+
+static void printConversions(double value)
+{
+    if (std::isnan(value))
+    {
+        printNan();
+        return;
+    }
+    if (std::isinf(value))
+    {
+        printInf(value);
+        return;
+    }
+    printChar(value);
+    printInt(value);
+    printFloat(value);
+    printDouble(value);
+}
+
+// funcion miembro
 void ScalarConverter::convert(const std::string &literal)
 {
-    LiteralType type = detectType(literal);
     double value;
+    LiteralType type = detectType(literal);
 
     switch (type)
     {
         case CHAR:
             value = static_cast<double>(literal[0]);
             break;
-
         case INT:
         case FLOAT:
         case DOUBLE:
+        case PSEUDO_FLOAT:
+        case PSEUDO_DOUBLE:
             value = std::strtod(literal.c_str(), NULL);
             break;
-        
         default:
             std::cout << "Invalid literal" << std::endl;
             return;
     }
-
     printConversions(value);
 }

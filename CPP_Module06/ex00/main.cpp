@@ -6,7 +6,7 @@
 /*   By: bvdhelen <bvdhelen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 13:40:16 by bvdhelen          #+#    #+#             */
-/*   Updated: 2026/07/23 13:40:26 by bvdhelen         ###   ########.fr       */
+/*   Updated: 2026/07/27 15:46:57 by bvdhelen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,34 @@ int	main(int argc, char **argv)
 ./convert ++1
 ./convert 1..0
 ./convert +
+*/
+
+/*MAS PRUEBAS
+
+./convert a
+./convert z
+./convert 0
+./convert 42
+./convert -42
+./convert +42
+./convert 4.2
+./convert 4.2f
+./convert .5
+./convert .5f
+./convert 5.
+./convert 5.f
+./convert nan
+./convert nanf
+./convert +inf
+./convert +inff
+./convert -inf
+./convert -inff
+./convert hello
+./convert ++42
+./convert 4..2
+./convert +
+./convert -
+./convert .
+./convert f
+
 */

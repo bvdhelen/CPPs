@@ -6,12 +6,12 @@
 #    By: bvdhelen <bvdhelen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/07/23 12:51:23 by bvdhelen          #+#    #+#              #
-#    Updated: 2026/07/28 12:57:14 by bvdhelen         ###   ########.fr        #
+#    Updated: 2026/07/28 14:14:59 by bvdhelen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Nombre del programa
-NAME = iter
+NAME = Iter
 
 # Compilador y banderas de compilación
 CXX = c++

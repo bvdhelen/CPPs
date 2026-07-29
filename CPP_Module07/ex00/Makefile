@@ -6,12 +6,12 @@
 #    By: bvdhelen <bvdhelen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/07/23 12:51:23 by bvdhelen          #+#    #+#              #
-#    Updated: 2026/07/28 12:34:03 by bvdhelen         ###   ########.fr        #
+#    Updated: 2026/07/28 14:15:16 by bvdhelen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Nombre del programa
-NAME = ex00
+NAME = Start
 
 # Compilador y banderas de compilación
 CXX = c++

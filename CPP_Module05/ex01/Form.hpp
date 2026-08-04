@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvdhelen <bvdhelen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eldiaz-c <eldiaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 13:03:11 by bvdhelen          #+#    #+#             */
-/*   Updated: 2026/07/23 13:03:14 by bvdhelen         ###   ########.fr       */
+/*   Updated: 2026/08/04 11:04:20 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,24 +40,23 @@ class	Form
 		int	getSignGrade() const;
 		int	getExecuteGrade() const;
 
+		//member function
 		void	beSigned(const Bureaucrat &bureaucrat);
+
 		//exceptions
 		class GradeTooHighException : public std::exception
 		{
 			public:
 				virtual const char *what() const throw();
-
 		};
 
 		class GradeTooLowException : public std::exception
 		{
 			public:
 				virtual const char *what() const throw();
-
 		};
-
 };
 
-std::ostream	&operator<<(std::ostream &out, const Form &form);
+std::ostream &operator<<(std::ostream &out, const Form &form);
 
 #endif

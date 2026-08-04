@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvdhelen <bvdhelen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eldiaz-c <eldiaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 13:10:33 by bvdhelen          #+#    #+#             */
-/*   Updated: 2026/07/23 13:10:35 by bvdhelen         ###   ########.fr       */
+/*   Updated: 2026/08/04 11:21:56 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
-#include <iostream>
 
-//OCF
+// Orthodox Canonical Form
 PresidentialPardonForm::PresidentialPardonForm(const std::string &target)
     : AForm("PresidentialPardonForm", 25, 5), _target(target)
 {
@@ -46,8 +45,8 @@ PresidentialPardonForm::~PresidentialPardonForm()
 {
 }
 
+// Member function
 void	PresidentialPardonForm::executeAction() const
 {
 	std::cout << _target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
-
 }

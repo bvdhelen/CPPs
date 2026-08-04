@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvdhelen <bvdhelen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eldiaz-c <eldiaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 13:04:14 by bvdhelen          #+#    #+#             */
-/*   Updated: 2026/07/23 13:04:17 by bvdhelen         ###   ########.fr       */
+/*   Updated: 2026/08/04 11:34:00 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-//OCF
+// Orthodox Canonical Form
 Form::Form()
     : _name("Default"),
       _isSigned(false),
@@ -53,38 +53,39 @@ Form::~Form()
 {
 }
 
-//getters
+// Getters
 const std::string &Form::getName() const
 {
-    return (_name);
+    return _name;
 }
 
 bool Form::getIsSigned() const
 {
-	return (_isSigned);
+	return _isSigned;
 }
 
 int Form::getSignGrade() const
 {
-	return (_signGrade);
+	return _signGrade;
 }
 
 int Form::getExecuteGrade() const
 {
-	return (_executeGrade);
+	return _executeGrade;
 }
 
-//exceptions
+// Exception error messages
 const char *Form::GradeTooHighException::what() const throw()
 {
-    return ("grade too high");
+    return ("Grade too high.");
 }
 
 const char *Form::GradeTooLowException::what() const throw()
 {
-    return ("grade too low");
+    return ("Grade too low.");
 }
 
+// Member function
 void Form::beSigned(const Bureaucrat &bureaucrat)
 {
     if (bureaucrat.getGrade() > _signGrade)
@@ -92,18 +93,17 @@ void Form::beSigned(const Bureaucrat &bureaucrat)
     _isSigned = true;
 }
 
+// Overload of the insertion operator <<
 std::ostream &operator<<(std::ostream &out, const Form &form)
 {
-    out << form.getName() << ", form is ";
-
+    out << form.getName() << " form is ";
     if (form.getIsSigned())
         out << "signed";
     else
         out << "not signed";
-
-    out << ", sign grade " << form.getSignGrade();
+    out << "; sign grade " << form.getSignGrade();
     out << ", execute grade " << form.getExecuteGrade();
     out << ".";
 
-    return (out);
+    return out;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvdhelen <bvdhelen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eldiaz-c <eldiaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 13:11:35 by bvdhelen          #+#    #+#             */
-/*   Updated: 2026/07/23 13:15:39 by bvdhelen         ###   ########.fr       */
+/*   Updated: 2026/08/04 11:39:49 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define ROBOTOMYREQUESTFORM_HPP
 
 #include "AForm.hpp"
+#include <iostream>
+#include <cstdlib>
 
 class Bureaucrat;
 
@@ -22,8 +24,8 @@ class RobotomyRequestForm : public AForm
 	private:
 		std::string	_target;
 	protected:
+		//member function
 		virtual void executeAction() const;
-	
 	public:
 		//OCF
 		RobotomyRequestForm(const std::string &target);

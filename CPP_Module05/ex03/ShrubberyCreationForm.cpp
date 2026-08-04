@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvdhelen <bvdhelen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eldiaz-c <eldiaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 13:12:52 by bvdhelen          #+#    #+#             */
-/*   Updated: 2026/07/23 13:19:19 by bvdhelen         ###   ########.fr       */
+/*   Updated: 2026/08/04 11:40:20 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
-#include <fstream>
 
-//OCF
+// Orthodox Canonical Form
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target)
     : AForm("ShrubberyCreationForm", 145, 137), _target(target)
 {
@@ -46,6 +45,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 }
 
+// Member function
 void	ShrubberyCreationForm::executeAction() const
 {
 	std::string filename = _target + "_shrubbery";

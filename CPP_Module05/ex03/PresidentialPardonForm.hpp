@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvdhelen <bvdhelen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eldiaz-c <eldiaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 13:10:13 by bvdhelen          #+#    #+#             */
-/*   Updated: 2026/07/23 13:18:38 by bvdhelen         ###   ########.fr       */
+/*   Updated: 2026/08/04 11:38:52 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define PRESIDENTIALPARDONFORM_HPP
 
 #include "AForm.hpp"
+#include <iostream>
 
 class Bureaucrat;
 
@@ -22,8 +23,8 @@ class	PresidentialPardonForm : public AForm
 	private:
 		std::string	_target;
 	protected:
+		//member function
 		virtual void executeAction() const;
-	
 	public:
 		//OCF
 		PresidentialPardonForm(const std::string &target);

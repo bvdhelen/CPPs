@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvdhelen <bvdhelen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eldiaz-c <eldiaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 13:19:56 by bvdhelen          #+#    #+#             */
-/*   Updated: 2026/07/23 13:19:58 by bvdhelen         ###   ########.fr       */
+/*   Updated: 2026/08/04 11:41:10 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define INTERN_HPP
 
 #include <string>
+#include <iostream>
 
 class AForm;
 
@@ -26,7 +27,7 @@ class	Intern
 		Intern &operator=(const Intern &other);
 		~Intern();
 
-		//funcion miembro
+		//member function
 		AForm *makeForm(const std::string &name, const std::string &target);
 };
 

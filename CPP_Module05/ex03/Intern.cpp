@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvdhelen <bvdhelen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eldiaz-c <eldiaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 13:19:35 by bvdhelen          #+#    #+#             */
-/*   Updated: 2026/07/23 13:19:43 by bvdhelen         ###   ########.fr       */
+/*   Updated: 2026/08/04 11:41:54 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,7 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
-#include <iostream>
-
-//OCF
-
+// Orthodox Canonical Form
 Intern::Intern()
 {
 
@@ -39,7 +36,7 @@ Intern::~Intern()
 {
 }
 
-//funciones miembro y creadoras
+// Creator functions
 static AForm *createShrubbery(const std::string &target)
 {
     return (new ShrubberyCreationForm(target));
@@ -55,6 +52,7 @@ static AForm *createPresidential(const std::string &target)
     return (new PresidentialPardonForm(target));
 }
 
+// Member function
 AForm *Intern::makeForm(const std::string &name, const std::string &target)
 {
 	std::string forms[3] =

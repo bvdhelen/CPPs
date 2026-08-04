@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvdhelen <bvdhelen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eldiaz-c <eldiaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 13:07:29 by bvdhelen          #+#    #+#             */
-/*   Updated: 2026/07/23 13:07:32 by bvdhelen         ###   ########.fr       */
+/*   Updated: 2026/08/04 11:28:58 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class	Bureaucrat
 		const std::string	_name;
 		int			_grade;
 	public:
+		//OCF
 		Bureaucrat(const std::string &name, int grade);
 		Bureaucrat();
 		Bureaucrat(const Bureaucrat &other);
@@ -35,31 +36,30 @@ class	Bureaucrat
 		const std::string &getName() const;
 		int getGrade() const;
 		
-		//cambiar grade??
+		//member functions
 		void incrementGrade();
 		void decrementGrade();
 
-		//lo nuevo ex01
+		//new member function ex01
 		void signForm(AForm &form);
-		void executeForm(AForm const &form);
+
+		//new member function ex02
+		void executeForm(AForm const &form) const;
 
 		//exceptions
 		class GradeTooHighException : public std::exception
 		{
 			public:
 				virtual const char *what() const throw();
-
 		};
 
 		class GradeTooLowException : public std::exception
 		{
 			public:
 				virtual const char *what() const throw();
-
 		};
-
 };
 
-std::ostream	&operator<<(std::ostream &out, const Bureaucrat &bureaucrat);
+std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat);
 
 #endif

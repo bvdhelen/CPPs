@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvdhelen <bvdhelen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eldiaz-c <eldiaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 13:07:43 by bvdhelen          #+#    #+#             */
-/*   Updated: 2026/07/23 13:17:15 by bvdhelen         ###   ########.fr       */
+/*   Updated: 2026/08/04 11:37:00 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 
+// Orthodox Canonical Form
 Bureaucrat::Bureaucrat(const std::string &name, int grade)
 	: _name(name), _grade(grade)
 {
@@ -41,7 +42,7 @@ Bureaucrat::~Bureaucrat()
 {
 }
 
-//getters
+// Getters
 const std::string &Bureaucrat::getName() const
 {
 	return _name;
@@ -52,7 +53,7 @@ int Bureaucrat::getGrade() const
 	return _grade;
 }
 
-//lo otro
+// Member functions
 void	Bureaucrat::incrementGrade()
 {
 	if (_grade == 1)
@@ -67,18 +68,18 @@ void	Bureaucrat::decrementGrade()
 	_grade++;
 }
 
-//mensajes de error de las excepciones
+// Exception error messages
 const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return "grade too low";
+	return "Grade too low.";
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return "grade too high";
+	return "Grade too high.";
 }
 
-//funcion de sobrecarga de operador <<
+// Overload of the insertion operator <<
 std::ostream	&operator<<(std::ostream &out, const Bureaucrat &bureaucrat)
 {
 	out << bureaucrat.getName()
@@ -88,7 +89,7 @@ std::ostream	&operator<<(std::ostream &out, const Bureaucrat &bureaucrat)
 	return out;
 }
 
-// lo nuevo de ex01
+// New member function ex01
 void Bureaucrat::signForm(AForm &form)
 {
     try
@@ -107,6 +108,7 @@ void Bureaucrat::signForm(AForm &form)
     }
 }
 
+// New member function ex02
 void Bureaucrat::executeForm(AForm const &form)
 {
     try

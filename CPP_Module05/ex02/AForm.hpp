@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvdhelen <bvdhelen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eldiaz-c <eldiaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 13:09:21 by bvdhelen          #+#    #+#             */
-/*   Updated: 2026/07/23 13:09:23 by bvdhelen         ###   ########.fr       */
+/*   Updated: 2026/08/04 11:16:55 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ class	AForm
 	protected:
 		virtual void executeAction() const = 0;
 	public:
-    		void execute(Bureaucrat const &executor) const;
 		//OCF
 		AForm();
 		AForm(const std::string &name, int signGrade, int executeGrade);
@@ -43,31 +42,30 @@ class	AForm
 		int	getSignGrade() const;
 		int	getExecuteGrade() const;
 
+		//member functions
 		void	beSigned(const Bureaucrat &bureaucrat);
+		void 	execute(Bureaucrat const &executor) const;
 
 		//exceptions
 		class GradeTooHighException : public std::exception
 		{
 			public:
 				virtual const char *what() const throw();
-
 		};
 
 		class GradeTooLowException : public std::exception
 		{
 			public:
 				virtual const char *what() const throw();
-
 		};
 		
 		class FormNotSignedException : public std::exception
 		{
 			public:
-    				virtual const char *what() const throw();
+    			virtual const char *what() const throw();
 		};
-
 };
 
-std::ostream	&operator<<(std::ostream &out, const AForm &form);
+std::ostream &operator<<(std::ostream &out, const AForm &form);
 
 #endif

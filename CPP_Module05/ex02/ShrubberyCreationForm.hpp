@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvdhelen <bvdhelen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eldiaz-c <eldiaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 13:12:27 by bvdhelen          #+#    #+#             */
-/*   Updated: 2026/07/23 13:12:29 by bvdhelen         ###   ########.fr       */
+/*   Updated: 2026/08/04 11:24:36 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define SHRUBBERYCREATIONFORM_HPP
 
 #include "AForm.hpp"
+#include <fstream>
 
 class Bureaucrat;
 
@@ -22,8 +23,8 @@ class	ShrubberyCreationForm : public AForm
 	private:
 		std::string	_target;
 	protected:
+		//member function
 		virtual void executeAction() const;
-	
 	public:
 		//OCF
 		ShrubberyCreationForm(const std::string &target);

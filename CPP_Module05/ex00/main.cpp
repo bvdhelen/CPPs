@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvdhelen <bvdhelen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eldiaz-c <eldiaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 12:51:47 by bvdhelen          #+#    #+#             */
-/*   Updated: 2026/07/23 12:51:49 by bvdhelen         ###   ########.fr       */
+/*   Updated: 2026/08/04 10:57:36 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include <iostream>
 
 int main(void)
 {
@@ -58,7 +57,7 @@ int main(void)
         alice.incrementGrade();
         std::cout << "After increment: " << alice << std::endl;
 
-        alice.incrementGrade(); // Exception
+        alice.incrementGrade();
         std::cout << alice << std::endl;
     }
     catch (std::exception &e)
@@ -76,7 +75,7 @@ int main(void)
         john.decrementGrade();
         std::cout << "After decrement: " << john << std::endl;
 
-        john.decrementGrade(); // Exception
+        john.decrementGrade();
         std::cout << john << std::endl;
     }
     catch (std::exception &e)

@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bvdhelen <bvdhelen@student.42.fr>          +#+  +:+       +#+         #
+#    By: eldiaz-c <eldiaz-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/07/23 12:51:23 by bvdhelen          #+#    #+#              #
-#    Updated: 2026/07/31 18:50:56 by bvdhelen         ###   ########.fr        #
+#    Updated: 2026/08/04 19:44:14 by eldiaz-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Nombre del programa
-NAME = easyfind
+NAME = EasyFind
 
 # Compilador y banderas de compilación
 CXX = c++

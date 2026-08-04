@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvdhelen <bvdhelen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eldiaz-c <eldiaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/28 12:57:16 by bvdhelen          #+#    #+#             */
-/*   Updated: 2026/07/28 14:12:56 by bvdhelen         ###   ########.fr       */
+/*   Updated: 2026/08/04 15:48:52 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "iter.hpp"
-#include <string>
 
 template <typename T>
 void print(const T &value)
@@ -33,25 +32,25 @@ int main(void)
     std::cout << "Original int array:" << std::endl;
     iter(numbers, 5, print<int>);
     iter(numbers, 5, increment<int>);
-    std::cout << "\nAfter increment:" << std::endl;
+    std::cout << "git statusAfter increment:" << std::endl;
     iter(numbers, 5, print<int>);
 
     // FLOAT
     float decimals[] = {1.5f, 2.5f, 3.5f};
 
-    std::cout << "\nFloat array:" << std::endl;
+    std::cout << "Float array:" << std::endl;
     iter(decimals, 3, print<float>);
 
     // STRING
     std::string words[] = {"Hello", "42", "Templates"};
 
-    std::cout << "\nString array:" << std::endl;
+    std::cout << "String array:" << std::endl;
     iter(words, 3, print<std::string>);
 
     // CONST INT
     const int values[] = {10, 20, 30};
 
-    std::cout << "\nConst int array:" << std::endl;
+    std::cout << "Const int array:" << std::endl;
     iter(values, 3, print<int>);
 
     return (0);

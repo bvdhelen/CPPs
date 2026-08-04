@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bvdhelen <bvdhelen@student.42.fr>          +#+  +:+       +#+         #
+#    By: eldiaz-c <eldiaz-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/07/23 12:51:23 by bvdhelen          #+#    #+#              #
-#    Updated: 2026/07/29 12:28:44 by bvdhelen         ###   ########.fr        #
+#    Updated: 2026/08/04 16:07:36 by eldiaz-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ GREY = \033[0;90m
 RESET = \033[0m
 
 # Archivos fuente y archivos objeto
-SRCS = main.cpp
+SRCS = mymain.cpp
 OBJS = $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
 
 all: $(NAME)

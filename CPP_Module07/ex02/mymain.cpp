@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   mymain.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvdhelen <bvdhelen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eldiaz-c <eldiaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/28 14:15:50 by bvdhelen          #+#    #+#             */
-/*   Updated: 2026/07/29 12:23:18 by bvdhelen         ###   ########.fr       */
+/*   Updated: 2026/08/04 16:09:10 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include <string>
 #include "Array.hpp"
 
-//MI MAIN
 int main(void)
 {
     std::cout << "DEFAULT CONSTRUCTOR" << std::endl;
@@ -22,7 +21,7 @@ int main(void)
 
     std::cout << "empty.size() = " << empty.size() << std::endl;
 
-    std::cout << "CONSTRUCTOR WITH SIZE" << std::endl;
+    std::cout << "\nCONSTRUCTOR WITH SIZE" << std::endl;
     Array<int> numbers(5);
 
     for (unsigned int i = 0; i < numbers.size(); i++)
@@ -30,17 +29,17 @@ int main(void)
     for (unsigned int i = 0; i < numbers.size(); i++)
         std::cout << "numbers[" << i << "] = " << numbers[i] << std::endl;
 
-    std::cout << "COPY CONSTRUCTOR" << std::endl;
+    std::cout << "\nCOPY CONSTRUCTOR" << std::endl;
 
     Array<int> copy(numbers);
 
     copy[0] = 999;
-    std::cout << "Original :" << std::endl;
+    std::cout << "Original:" << std::endl;
     for (unsigned int i = 0; i < numbers.size(); i++)
         std::cout << numbers[i] << " ";
     std::cout << std::endl;
 
-    std::cout << "Copy :" << std::endl;
+    std::cout << "Copy:" << std::endl;
     for (unsigned int i = 0; i < copy.size(); i++)
         std::cout << copy[i] << " ";
     std::cout << std::endl;
@@ -51,7 +50,7 @@ int main(void)
     else
         std::cout << "NO" << std::endl;
 
-    std::cout << "ASSIGNMENT OPERATOR" << std::endl;
+    std::cout << "\nASSIGNMENT OPERATOR" << std::endl;
 
     Array<int> assign;
 
@@ -73,7 +72,7 @@ int main(void)
     else
         std::cout << "NO" << std::endl;
 
-    std::cout << "STRING ARRAY" << std::endl;
+    std::cout << "\nSTRING ARRAY" << std::endl;
 
     Array<std::string> words(3);
 
@@ -83,7 +82,7 @@ int main(void)
     for (unsigned int i = 0; i < words.size(); i++)
         std::cout << words[i] << std::endl;
 
-    std::cout << "OUT OF BOUNDS" << std::endl;
+    std::cout << "\nOUT OF BOUNDS" << std::endl;
     try
     {
         numbers[10] = 100;

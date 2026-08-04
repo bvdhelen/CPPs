@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvdhelen <bvdhelen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eldiaz-c <eldiaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/28 14:15:55 by bvdhelen          #+#    #+#             */
-/*   Updated: 2026/07/29 12:10:46 by bvdhelen         ###   ########.fr       */
+/*   Updated: 2026/08/04 16:02:54 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ class Array
             public:
                 virtual const char *what() const throw();
         };
-    
 };
 
 #include "Array.tpp"

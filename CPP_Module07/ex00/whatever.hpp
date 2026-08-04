@@ -3,15 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvdhelen <bvdhelen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eldiaz-c <eldiaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/28 12:39:05 by bvdhelen          #+#    #+#             */
-/*   Updated: 2026/07/28 12:47:05 by bvdhelen         ###   ########.fr       */
+/*   Updated: 2026/08/04 14:16:18 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WHATEVER_HPP
 #define WHATEVER_HPP
+
+#include <iostream> //std::cout, std::endl
+#include <string> //std::string
 
 template <typename T>
 void    swap(T &a, T &b)

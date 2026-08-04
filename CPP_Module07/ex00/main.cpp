@@ -3,15 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvdhelen <bvdhelen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eldiaz-c <eldiaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/28 12:34:07 by bvdhelen          #+#    #+#             */
-/*   Updated: 2026/07/28 12:55:27 by bvdhelen         ###   ########.fr       */
+/*   Updated: 2026/08/04 14:18:15 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream> //std::cout, std::endl
-#include <string> //std::string
 #include "whatever.hpp"
 
 int main(void)
@@ -35,8 +33,18 @@ int main(void)
     return 0;
 }
 
+/*----------- OUTPUT -----------
+	a = 3, b = 2
+	min(a, b) = 2
+	max(a, b) = 3
+	c = chaine2, d = chaine1
+	min(c, d) = chaine1
+	max(c, d) = chaine2
+*/
+
 /*
-MÁS PRUEBAS
+----------- MORE TESTS -----------
+
     char x = 'A';
     char y = 'Z';
 
@@ -48,17 +56,5 @@ MÁS PRUEBAS
 
     std::cout << "min(f1, f2) = " << ::min(f1, f2) << std::endl;
     std::cout << "max(f1, f2) = " << ::max(f1, f2) << std::endl;
-
-*/
-
-/*
-OUTPUT
-
-a = 3, b = 2
-min(a, b) = 2
-max(a, b) = 3
-c = chaine2, d = chaine1
-min(c, d) = chaine1
-max(c, d) = chaine2
 
 */

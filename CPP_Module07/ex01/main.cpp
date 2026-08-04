@@ -6,7 +6,7 @@
 /*   By: eldiaz-c <eldiaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/28 12:57:16 by bvdhelen          #+#    #+#             */
-/*   Updated: 2026/08/04 15:48:52 by eldiaz-c         ###   ########.fr       */
+/*   Updated: 2026/08/04 21:35:51 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int main(void)
     std::cout << "Original int array:" << std::endl;
     iter(numbers, 5, print<int>);
     iter(numbers, 5, increment<int>);
-    std::cout << "git statusAfter increment:" << std::endl;
+    std::cout << "After increment:" << std::endl;
     iter(numbers, 5, print<int>);
 
     // FLOAT

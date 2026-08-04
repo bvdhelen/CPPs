@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvdhelen <bvdhelen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eldiaz-c <eldiaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 16:29:44 by bvdhelen          #+#    #+#             */
-/*   Updated: 2026/08/04 13:35:38 by bvdhelen         ###   ########.fr       */
+/*   Updated: 2026/08/04 17:02:37 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <stdint.h> //uintptr_t (An integer that can store a memory address.)
 #include <iostream>
 
-class Data;
+struct Data;
 
 class Serializer
 {

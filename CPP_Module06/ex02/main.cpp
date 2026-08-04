@@ -6,7 +6,7 @@
 /*   By: bvdhelen <bvdhelen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 20:40:30 by bvdhelen          #+#    #+#             */
-/*   Updated: 2026/07/27 20:54:52 by bvdhelen         ###   ########.fr       */
+/*   Updated: 2026/08/04 13:53:33 by bvdhelen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 #include "B.hpp"
 #include "C.hpp"
 
-#include <iostream>
-#include <cstdlib>
 #include <ctime>
 
 int main(void)
@@ -25,6 +23,8 @@ int main(void)
 
     Base *ptr = generate();
 
+    std::cout << std::endl;
+    
     std::cout << "identify (Base*): ";
     identify(ptr);
 

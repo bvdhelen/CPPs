@@ -6,12 +6,13 @@
 /*   By: bvdhelen <bvdhelen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 20:41:29 by bvdhelen          #+#    #+#             */
-/*   Updated: 2026/07/27 20:53:13 by bvdhelen         ###   ########.fr       */
+/*   Updated: 2026/08/04 13:46:37 by bvdhelen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "A.hpp"
 
+// Orthodox Canonical Form
 A::A()
 {
 }

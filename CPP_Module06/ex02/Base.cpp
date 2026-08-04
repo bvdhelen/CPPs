@@ -6,7 +6,7 @@
 /*   By: bvdhelen <bvdhelen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 20:40:56 by bvdhelen          #+#    #+#             */
-/*   Updated: 2026/07/27 20:52:29 by bvdhelen         ###   ########.fr       */
+/*   Updated: 2026/08/04 13:52:49 by bvdhelen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,8 @@
 #include "A.hpp"
 #include "B.hpp"
 #include "C.hpp"
-#include <iostream>
-#include <cstdlib>
-#include <typeinfo> //std::bad_cast
 
-//OCF
+// Orthodox Canonical Form
 Base::Base()
 {
 }
@@ -38,7 +35,7 @@ Base::~Base()
 {
 }
 
-//funciones auxiliares
+// Auxiliary functions
 Base *generate(void)
 {
     int random = std::rand() % 3;
@@ -48,11 +45,9 @@ Base *generate(void)
         case 0:
             std::cout << "Generated A" << std::endl;
             return new A();
-
         case 1:
             std::cout << "Generated B" << std::endl;
             return new B();
-
         default:
             std::cout << "Generated C" << std::endl;
             return new C();
@@ -78,7 +73,7 @@ void identify(Base &p)
         std::cout << "A" << std::endl;
         return;
     }
-    catch (std::bad_cast &e){}
+    catch (const std::bad_cast &e){}
     try
     {
         B &b = dynamic_cast<B &>(p);
@@ -86,7 +81,7 @@ void identify(Base &p)
         std::cout << "B" << std::endl;
         return;
     }
-    catch (std::bad_cast &e){}
+    catch (const std::bad_cast &e){}
     try
     {
         C &c = dynamic_cast<C &>(p);
@@ -94,5 +89,5 @@ void identify(Base &p)
         std::cout << "C" << std::endl;
         return;
     }
-    catch (std::bad_cast &e){}
+    catch (const std::bad_cast &e){}
 }

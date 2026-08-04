@@ -6,7 +6,7 @@
 /*   By: bvdhelen <bvdhelen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 20:44:06 by bvdhelen          #+#    #+#             */
-/*   Updated: 2026/07/27 20:44:11 by bvdhelen         ###   ########.fr       */
+/*   Updated: 2026/08/04 13:47:28 by bvdhelen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 class C : public Base
 {
 	public:
+		//OCF
 		C();
 		C(const C &other);
 		C &operator=(const C &other);

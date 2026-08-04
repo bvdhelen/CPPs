@@ -6,20 +6,13 @@
 /*   By: bvdhelen <bvdhelen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 13:41:12 by bvdhelen          #+#    #+#             */
-/*   Updated: 2026/07/27 16:21:58 by bvdhelen         ###   ########.fr       */
+/*   Updated: 2026/08/04 12:47:09 by bvdhelen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
-#include <iostream> //endl
-#include <cctype> //isdigit, isprint
-#include <climits> //limites de un char e int
-#include <cfloat> // DBL_* y FLT_*
-#include <cstdlib> //strtod()
-#include <iomanip> //std::fixed y std::setprecision(1)
-#include <cmath> //isnan(), isinf()
 
-//OCF
+// Orthodox Canonical Form
 ScalarConverter::ScalarConverter()
 {
 }
@@ -38,7 +31,7 @@ ScalarConverter::~ScalarConverter()
 {
 }
 
-//otras funciones
+// Useful Functions
 static bool isChar(const std::string &str)
 {
 	return (str.size() == 1 && !std::isdigit(str[0]));
@@ -112,6 +105,7 @@ static bool isDouble(const std::string &str)
     return isDecimal(str, false);
 }
 
+// Other Useful Functions
 static LiteralType detectPseudoLiteral(const std::string &str)
 {
     if (str == "nanf" || str == "+inff" || str == "-inff")
@@ -223,7 +217,7 @@ static void printConversions(double value)
     printDouble(value);
 }
 
-// funcion miembro
+// Member Function
 void ScalarConverter::convert(const std::string &literal)
 {
     double value;

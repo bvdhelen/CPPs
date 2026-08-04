@@ -6,14 +6,12 @@
 /*   By: bvdhelen <bvdhelen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 16:29:36 by bvdhelen          #+#    #+#             */
-/*   Updated: 2026/07/27 16:48:35 by bvdhelen         ###   ########.fr       */
+/*   Updated: 2026/08/04 13:39:36 by bvdhelen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//reinterpret_cast<tipo_destino>(expresión)
 #include "Serializer.hpp"
 #include "Data.hpp"
-#include <iostream>
 
 int main()
 {
@@ -29,8 +27,6 @@ int main()
     std::cout << "Original pointer     : " << ptr << std::endl;
     std::cout << "Serialized uintptr_t : " << raw << std::endl;
     std::cout << "Deserialized pointer : " << newPtr << std::endl;
-
-    std::cout << std::endl;
 
     std::cout << "Name: " << newPtr->_name << std::endl;
     std::cout << "Age : " << newPtr->_age << std::endl;

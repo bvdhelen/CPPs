@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bvdhelen <bvdhelen@student.42.fr>          +#+  +:+       +#+         #
+#    By: eldiaz-c <eldiaz-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/07/23 12:51:23 by bvdhelen          #+#    #+#              #
-#    Updated: 2026/08/05 16:56:29 by bvdhelen         ###   ########.fr        #
+#    Updated: 2026/08/05 17:11:53 by eldiaz-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Nombre del programa
-NAME = Span
+NAME = MutatedAbomination
 
 # Compilador y banderas de compilación
 CXX = c++
@@ -33,7 +33,7 @@ GREY = \033[0;90m
 RESET = \033[0m
 
 # Archivos fuente y archivos objeto
-SRCS = main.cpp Span.cpp
+SRCS = main.cpp
 OBJS = $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
 
 all: $(NAME)
@@ -42,7 +42,7 @@ $(NAME): $(OBJS)
 	@echo "$(GREY)Compiling...$(RESET)"
 	@$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 	@echo
-	@echo "$(GREEN)<<< CPP08-ex01 compiled >>>$(RESET)"
+	@echo "$(GREEN)<<< CPP08-ex02 compiled >>>$(RESET)"
 	@echo
 
 $(OBJ_DIR)/%.o: %.cpp

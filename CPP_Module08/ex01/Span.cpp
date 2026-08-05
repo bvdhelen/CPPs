@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvdhelen <bvdhelen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eldiaz-c <eldiaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/04 19:45:44 by eldiaz-c          #+#    #+#             */
-/*   Updated: 2026/08/05 17:02:42 by bvdhelen         ###   ########.fr       */
+/*   Updated: 2026/08/05 17:48:07 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int Span::shortestSpan() const
     return (minSpan);
 }
 
-//se puede hacer con max_element o min_element
+//You can do it with max_element & min_element
 int Span::longestSpan() const
 {
     if (_numbers.size() < 2)

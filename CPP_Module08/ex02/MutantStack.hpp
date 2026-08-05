@@ -6,7 +6,7 @@
 /*   By: eldiaz-c <eldiaz-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/05 17:12:19 by eldiaz-c          #+#    #+#             */
-/*   Updated: 2026/08/05 17:43:07 by eldiaz-c         ###   ########.fr       */
+/*   Updated: 2026/08/05 17:49:42 by eldiaz-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ class MutantStack : public std::stack<T>
         MutantStack &operator=(const MutantStack &other);
         ~MutantStack();
     
-        // Alias del iterador del contenedor interno
-        //non-const
+        // Alias ​​for the inner container iterator
+            //non-const
         typedef typename std::stack<T>::container_type::iterator iterator;
 
         iterator begin()
@@ -39,7 +39,7 @@ class MutantStack : public std::stack<T>
         {
             return (this->c.end());
         }
-        //const
+            //const
         typedef typename std::stack<T>::container_type::const_iterator const_iterator;
         
         const_iterator begin() const

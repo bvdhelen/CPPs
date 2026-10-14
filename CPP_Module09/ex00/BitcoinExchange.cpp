@@ -6,7 +6,7 @@
 /*   By: bvdhelen <bvdhelen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/13 18:55:43 by bvdhelen          #+#    #+#             */
-/*   Updated: 2026/08/14 23:30:55 by bvdhelen         ###   ########.fr       */
+/*   Updated: 2026/10/14 03:01:42 by bvdhelen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ BitcoinExchange::~BitcoinExchange()
 {   
 }
 
-void BitcoinExchange::loadDatabase(const std::string &filename)
+bool BitcoinExchange::loadDatabase(const std::string &filename)
 {
 	std::ifstream file(filename.c_str());
 
 	if (!file.is_open())
 	{
 		std::cerr << "Error: could not open database file." << std::endl;
-		return ;
+		return false;
 	}
 
     std::string line;
@@ -58,14 +58,16 @@ void BitcoinExchange::loadDatabase(const std::string &filename)
         
         _database[date] = rate;
     }
-    std::map<std::string, float>::iterator it;
+	// DEBUGGER (prints each date & price)
+    // std::map<std::string, float>::iterator it;
 
-    for (it = _database.begin(); it != _database.end(); ++it)
-    {
-        std::cout << it->first << " -> " << it->second << std::endl;
-    }
+    // for (it = _database.begin(); it != _database.end(); ++it)
+    // {
+    //     std::cout << it->first << " -> " << it->second << std::endl;
+    // }
     
     file.close();
+	return true;
 }
 
 int BitcoinExchange::daysInMonth(int year, int month)
@@ -122,12 +124,14 @@ bool BitcoinExchange::isValidValue(const std::string &value)
 {
 	int i;
 	bool decimal;
+	bool hasDigit;
 
 	if (value.empty())
 		return false;
 
 	i = 0;
 	decimal = false;
+	hasDigit = false;
 
 	if (value[i] == '+' || value[i] == '-')
 		i++;
@@ -143,11 +147,13 @@ bool BitcoinExchange::isValidValue(const std::string &value)
 				return false;
 			decimal = true;
 		}
-		else if (!std::isdigit(value[i]))
+		else if (std::isdigit(value[i]))
+			return true;
+		else
 			return false;
 	}
-
-	return true;
+	
+	return hasDigit;
 }
 
 std::string BitcoinExchange::trim(const std::string &str)
@@ -174,6 +180,9 @@ void BitcoinExchange::processInput(const std::string &filename)
 		return;
 	}
 
+	if (_database.empty())
+    	return;
+	
 	std::string line;
 	std::getline(file, line);
 

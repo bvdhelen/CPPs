@@ -6,7 +6,7 @@
 /*   By: bvdhelen <bvdhelen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/13 18:55:20 by bvdhelen          #+#    #+#             */
-/*   Updated: 2026/08/14 23:19:14 by bvdhelen         ###   ########.fr       */
+/*   Updated: 2026/10/14 02:55:58 by bvdhelen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int main(int argc, char **argv)
     }
     BitcoinExchange btc;
 
-    btc.loadDatabase("data.csv");
+    if (!btc.loadDatabase("data.csv"))
+        return 1;
     btc.processInput(argv[1]);
 
     return 0;
